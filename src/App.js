@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 import Container from "./components/Container/Container";
 import Section from "./components/Section/Section";
-import ContactForm from "./components/ContactForm/ContactForm";
+//import ContactForm from "./components/ContactForm/ContactForm";
+import FormikContactForm from "../src/components/FormikContactForm/FormikContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import Filter from "./components/Filter/Filter";
 
@@ -51,7 +52,10 @@ class App extends Component {
     const visibleContacts = this.onInputSearch();
     return (
       <Container>
-        <ContactForm onSubmit={this.addContact}></ContactForm>
+        <Section title={"Phonebook"}>
+          <FormikContactForm onSubmit={this.addContact} />
+        </Section>
+        {/* <ContactForm onSubmit={this.addContact}></ContactForm> */}
         <Section title={"Contacts"}>
           <Filter onChange={this.changeFilter} value={filter} />
           <ContactList

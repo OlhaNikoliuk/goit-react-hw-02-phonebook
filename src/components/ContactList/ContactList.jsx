@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import {List, ListItem, Button} from './ContactList.styled';
+import PropTypes from "prop-types";
+import { List, ListItem, Button } from "./ContactList.styled";
 
 function ContactList({ contacts, onDeleteContact }) {
   return (
@@ -8,7 +8,9 @@ function ContactList({ contacts, onDeleteContact }) {
         return (
           <ListItem key={contact.id}>
             {contact.name}:<span> {contact.number}</span>
-            <Button type='button' onClick={()=>onDeleteContact(contact.id)}>Delete</Button>
+            <Button type="button" onClick={() => onDeleteContact(contact.id)}>
+              Delete
+            </Button>
           </ListItem>
         );
       })}
@@ -19,6 +21,6 @@ function ContactList({ contacts, onDeleteContact }) {
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
   onDeleteContact: PropTypes.func,
-}
+};
 
 export default ContactList;

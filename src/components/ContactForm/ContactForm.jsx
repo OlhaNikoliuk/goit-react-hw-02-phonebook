@@ -62,7 +62,7 @@ class ContactForm extends Component {
               required
               onChange={this.onInputChange}
               value={number}
-              placeholder='8(***) *** ****'
+              placeholder='38(***) *** ****'
             />
           </Label>
           <Button>Add Contact</Button>
